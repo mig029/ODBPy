@@ -12,3 +12,5 @@ If you want to help, please drop me a line!
 This will save a basic BOM in BOM.xlsx (or use `-o` CLI option for a custom output filename).
 
 Tested with DIPTrace 3.x and ODB++ 8.1.
+
+Going to modify to not export to excel file, but to be able to parse and output data to be used in an seperate process. (probably pandas)
