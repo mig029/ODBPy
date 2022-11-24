@@ -17,6 +17,7 @@ def filter_line_record_lines(lines):
     ]
 
 def read_raw_linerecords(filename):
+    print(filename)
     "Read a .Z line record file and return only important lines in order"
     try: # Assume file-like object
         return filter_line_record_lines(filename.read().split("\n"))

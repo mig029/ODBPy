@@ -8,6 +8,7 @@ from collections import namedtuple
 from .Decoder import DecoderOption, run_decoder
 from .Structures import *
 from .Utils import try_parse_number
+from .Attributes import parse_attributes
 
 __all__ = ["components_decoder_options", "parse_components",
            "consolidate_component_tags", "Component", "map_components_by_name"]
