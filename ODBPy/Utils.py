@@ -26,10 +26,10 @@ def try_parse_number(s):
 def readFileLines(filepath, open_fn=open):
     "Get stripped lines of a given file"
     try: # Assume file-like object
-        return [l.strip() for l in filepath.read().split("\n").decode('utf-8')]
+        return [l.strip() for l in filepath.read().split("\n")]
     except AttributeError:
-        with open_fn(filepath) as fin:
-            return [l.strip() for l in fin.read().split("\n").decode('utf-8')]
+            with open_fn(filepath) as fin:
+                return [l.strip() for l in fin.read().split("\n")]
 
 def readGZIPFileLines(filepath):
     "Get stripped lines of a given file in gzip format"

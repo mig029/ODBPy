@@ -35,7 +35,20 @@ def parse_attributes(attribute_str):
         attr.partition("=") if "=" in attr else (attr, None, True)
         for attr in attrs)
     # Create dict of ints
-    return {
-        int(attr[0]): int(attr[2]) if not isinstance(attr[2], bool) else attr[2]
-        for attr in part_attrs
-    }
+    try:
+        return {
+            int(attr[0]): int(attr[2]) if not isinstance(attr[2], bool) else attr[2]
+            for attr in part_attrs
+        }
+    except ValueError:
+        try:
+            return {
+                int(attr[0]): int(attr[2]) if not isinstance(attr[2], bool) else attr[2]
+                for attr in part_attrs
+            }
+        except ValueError:
+            return {
+                int(attr[0]): str(attr[2]) if not isinstance(attr[2], bool) else attr[2]
+                for attr in part_attrs
+            }
+        
